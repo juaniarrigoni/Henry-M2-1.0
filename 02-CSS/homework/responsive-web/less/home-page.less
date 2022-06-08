@@ -1,20 +1,25 @@
 // Conteindo del Home
 
 .home {
-
   .intro {
-
     h2 {
       padding: 15px;
     }
 
     p {
-      padding:0 15px;
+      padding: 0 15px;
     }
-
+    img {
+      .img-rounded(20px);
+      @media (max-width: @phone) {
+        // si el width es igual a lo que definidmos en @phone, ejecutamos el css que decimos abajo
+        width: 100%; // que cubra el 100% de la pantalla
+      }
+    }
   }
 
   .music-images {
+    // imagenes de publicidad
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -24,6 +29,21 @@
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+    }
+
+    .tecnologaia,
+    .ondas {
+      @media (max-width: @phone) {
+        // si el ancho es igual al que definimos en phone
+        display: none; // que no se muestrena las imagenes
+      }
+    }
+
+    .auricular {
+      @media (max-width: @phone) {
+        // sie le ancho es el de phone
+        width: 100%; // que ocupe el 100% de la pantalla
+      }
     }
   }
 
@@ -46,8 +66,21 @@
     display: flex;
     justify-content: center;
 
+    @media (max-width: @phone) {
+      .flex(column-reverse);
+      padding: 15px;
+
+      // .actual-text,
+      // .actual-img {
+      //   width: 100%;
+      // }
+    }
+
     .actual-text {
       width: 50%;
+      @media (max-width: @phone) {
+        width: 100%;
+      }
 
       h3 {
         margin-bottom: 10px;
@@ -58,12 +91,20 @@
       }
 
       .btn {
+        .btn-herny(@btn-bg-color, white);
+        border-radius: 10px;
+        @media (max-width: @phone) {
+          width: 100%;
+        }
       }
     }
 
     .actual-img {
       width: 46%;
       margin-left: 4%;
+      @media (max-width: @phone) {
+        width: 100%;
+      }
 
       img {
         width: 100%;

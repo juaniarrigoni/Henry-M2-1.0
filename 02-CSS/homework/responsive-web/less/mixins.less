@@ -1,1 +1,23 @@
-// Mixins acá
+// Mixins ac.
+.img-rounded(@radius: 20px) {
+  border-radius: @radius;
+}
+
+.flex(@direction, @align, @justify) {
+  // creo una funcion para usar en los css
+  display: flex;
+  flex-direction: @directionjustify;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.btn-henry(@bgColor, @fontColor) {
+  .btn();
+  color: fontColor;
+  background-color: @bgColor;
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+}
