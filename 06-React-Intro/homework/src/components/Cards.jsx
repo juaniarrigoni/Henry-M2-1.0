@@ -1,7 +1,26 @@
-import React from 'react';
+import React from "react";
+import Card from "./components/Card.jsx"; // lo importamos para que reconozca el tipo de componente que queremos devolver
 
 export default function Cards(props) {
   // acá va tu código
   // tip, podés usar un map
-  return <div>Cards Component</div>
-};
+  if (props.cities) {
+    return (
+      <div>
+        {props.cities &&
+          props.cities.map((c) => (
+            <Card
+              key={c.id}
+              max={c.main.temp_max}
+              min={c.main.temp_min}
+              name={c.name}
+              img={c.weather[0].icon}
+              onClose={() => alert(Cairns.name)}
+            />
+          ))}
+      </div>
+    );
+  } else {
+    return <h3>No hay ciudades</h3>;
+  }
+}
