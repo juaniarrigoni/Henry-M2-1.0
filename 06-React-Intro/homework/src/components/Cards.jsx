@@ -15,7 +15,7 @@ export default function Cards(props) {
               min={c.main.temp_min}
               name={c.name}
               img={c.weather[0].icon}
-              onClose={() => alert(Cairns.name)}
+              onClose={() => alert(c.name)}
             />
           ))}
       </div>

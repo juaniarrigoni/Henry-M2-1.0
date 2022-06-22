@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchBar(onSearch) {
+export default function SearchBar(props, onSearch) {
   // acá va tu código
   return (
     <div>
